@@ -27,46 +27,46 @@ def game_over(reason):
     # 'reason' is a string passed in to explain why the game ended.
 
     print(f"\n{reason}")  # Display the reason for game over.
-    print("💀 Game Over.")  # Game over message with emoji for visual effect.
+    print("💀 Game Over")  # Game over message with emoji for visual effect.
 
-    # Ask the player if they want to play again. 
+    # Ask the player if they want to play again.
     # .lower() makes the input lowercase to handle responses like "Yes" or "YES".
     play_again = input("Would you like to try again? (yes/no): ").lower()
 
     if play_again == "yes":
         start_game()  # Restart the game if player types "yes".
     else:
-        print("Thanks for playing. Goodbye!")  # Exit message.
+        print("Thanks for playing. Goodbye!")  # Exit message
         exit()  # Stops the program completely so no more code runs.
 
 def final_choice():
     # This function handles the final decision at the treasure room.
 
-    print("\nYou find the treasure room. A voice whispers: take the gold or leave with your life?")
+    print("\n You find the treasure room. A voice whispers: take the gold or leave with your life?")
 
     # Prompt the player to choose between taking the gold or leaving.
-    # Again, .lower() ensures case doesn't matter.
+    # Again .lower() ensures case doesn't matter.
     choice = input("What do you do? (take/leave): ").lower()
 
     if choice == "take":
-        # If the player chooses to take the gold, they lose because it’s cursed.
-        game_over("The gold was cursed. You're trapped forever.")
+        # If the player chooses to take the gold, they lose because it's cursed
+        game_over("The gold was cursed. You are trapped forever.")
     else:
         # If the player chooses to leave the gold, they win.
-        print("You escape the island safely, wiser and richer in spirit. You win! 🏆")
+        print("You escape the island safely, wiser and richer. You win! 🏆")
 
 def jungle_path():
     # This function runs when the player chooses to go into the jungle.
 
     print("\nYou push deeper into the jungle.")
-    print("Left: a glowing plant 🌿")   # Presenting left path.
-    print("Right: a dark cave 🕳️")     # Presenting right path.
+    print("Left: a glowing plant 🌿")  # Presenting left path.
+    print("Right: a dark cave 🕳️")  # Presenting right path.
 
     # Ask the player which direction they want to go.
-    choice = input("Where do you go? (left/right): ").lower()
+    choice = input("Where do you go? (left/right):").lower()
 
     if choice == "left":
-        # If the player chooses left, they discover a helpful map and continue.
+        # If player chooses left, they discover a helpful map and continue.
         print("You find a glowing map that leads to a hidden temple.")
         final_choice()  # Move to the final decision.
     else:
@@ -77,16 +77,16 @@ def start_game():
     # This function is the starting point of the game.
     # It sets up the scenario and presents the first major choice.
 
-    print("\n🌴 Welcome to Island Treasure! Your mission: find the hidden gold.")
+    print("\n🌴 Welcome  to Island Treasure! Your mission: find the hidden gold.")
     print("You arrive on a mysterious island.")
     print("To your left: the jungle 🌳")
-    print("To your right: the beach 🏖️")
+    print("To your right:the beach 🏖️")
 
     # Ask the player where they want to go first.
     choice = input("Where do you go? (left/right): ").lower()
 
     if choice == "left":
-        # If the player chooses the jungle, continue the story.
+        # If player chooses the jungle, continue the story.
         jungle_path()
     else:
         # If the player chooses the beach, they fall into quicksand and lose.
@@ -96,7 +96,6 @@ def start_game():
 # not if it's imported into another Python file.
 if __name__ == "__main__":
     start_game()
-
 ```
 
 ---
